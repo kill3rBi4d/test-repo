@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="canonical" href="https://html5-templates.com/" />
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="script.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Cool Kids Music Bot 0.01</title>
+</head>
+<body>
+	<div id="desktop">
+		
+		<div class="window" data-title="About">
+			Window content
+		</div>
+		<div class="window closed" data-title="Discord">
+			Second Window
+		</div>
+		<div class="window closed" data-title="Tic Tac Toe">
+			Third window starts closed
+		</div>
+		<div class="window" data-title="CKM">
+			<div class="ckm-cont">
+				<h1>Play high quality music in your Discord server for free.</h1>
+				<p>CK Music is one of the best discord music bots that you can find and provides free features which are payed in other bots!!</p>
+				<p>Already being used by most discord servers.</p>
+				<button onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=985273071273398343&permissions=242702670160&scope=bot')">Invite to server</button>
+				<br><br><br>
+				<h1>Get started in 3 steps</h1>
+				<p>1. Invite the bot to your server</p>
+				<p>Start by inviting the bot onto your discord server using this <a href="https://discord.com/api/oauth2/authorize?client_id=985273071273398343&permissions=242702670160&scope=bot" target="_blank" style="text-decoration: none;color: #006946;">link</a>.</p>
+				<br>
+				<p>2. Play a song</p>
+				<p>Once CK Music has joined your server, join a voice channel and do <code style="color: #006946;">$ckplay or $ckp [ music/url ]</code>. You can replace music by the music that you want to play or a spotify album/playlist link.</p>
+				<br>
+				<p>3. Enjoy the music!</p>
+				<p>Close your eyes and listen!</p>
+				<br><br>
+				<h1>Command List</h1>
+				<p>To use a command, do <code style="color: #006946;">$ck[command_name]</code> Replace <code style="color: #006946;">command_name</code> with the name of the command. Example: <code style="color: #006946;">$ckhelp</code> . If you need any help, check out the Starter guide</p>
+				<br>
+				<!-- <p style="color: #006946;">Music</p> -->
+				<table>
+					<tr>
+					  <th><code>Commands</code></th>
+					  <th><code>Alias</code></th>
+					  <th><code>Description</code></th>
+					  <th><code>Usage</code></th>
+					</tr>
+					<tr>
+					  <td><code style="color: #006946;">play</code></td>
+					  <td><code style="color: #006946;"> [$ckp] </code></td>
+					  <td><code style="color: #006946;">Automatically fetches the video(s) and joins the voice channel you are in to play your query! </code></td>
+					  <td><code style="color: #006946;">$ckplay [name/URL]</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">clear-queue</code></td>
+						<td><code style="color: #006946;">[$ckcq]</code></td>
+						<td><code style="color: #006946;">Clears the current queue.</code></td>
+						<td><code style="color: #006946;">$ckclear-queue</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">filter</code></td>
+						<td><code style="color: #006946;">[$ckf]</code></td>
+						<td><code style="color: #006946;">Filters the playlist.</code></td>
+						<td><code style="color: #006946;">&ckfilter [filter name]</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">loop</code></td>
+						<td><code style="color: #006946;">[$cklp] [$ckrepeat]</code></td>
+						<td><code style="color: #006946;">Loops the current playing music.</code></td>
+						<td><code style="color: #006946;">&ckloop</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">nowplaying</code></td>
+						<td><code style="color: #006946;">[$cknp]</code></td>
+						<td><code style="color: #006946;">Lists the current playing music(s).</code></td>
+						<td><code style="color: #006946;">$cknowplaying</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">pause</code></td>
+						<td><code style="color: #006946;">[$ckps] [$ckfreeze]</code></td>
+						<td><code style="color: #006946;">Pauses the playing music.</code></td>
+						<td><code style="color: #006946;">$ckpause</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">queue</code></td>
+						<td><code style="color: #006946;">[$ckq] [$ckline]</code></td>
+						<td><code style="color: #006946;">Adds a music to the queue.</code></td>
+						<td><code style="color: #006946;">$ckqueue</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">resume</code></td>
+						<td><code style="color: #006946;">[$ckrs] [$ckrewind]</code></td>
+						<td><code style="color: #006946;">Resumes the current playing music(s).</code></td>
+						<td><code style="color: #006946;">$ckresume</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">search</code></td>
+						<td><code style="color: #006946;">[$cksr]</code></td>
+						<td><code style="color: #006946;">Searches and lists all results from the query.</code></td>
+						<td><code style="color: #006946;">$cksearch [name/URL]</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">shuffle</code></td>
+						<td><code style="color: #006946;">[$cksh]</code></td>
+						<td><code style="color: #006946;">Shuffles the current playlist.</code></td>
+						<td><code style="color: #006946;">$ckshuffle</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">skip</code></td>
+						<td><code style="color: #006946;">[$cksk] [$ckjump]</code></td>
+						<td><code style="color: #006946;">Skips the current playing music.</code></td>
+						<td><code style="color: #006946;">$ckskip</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">stop</code></td>
+						<td><code style="color: #006946;">[$ckdc]</code></td>
+						<td><code style="color: #006946;">Stops the playing music.</code></td>
+						<td><code style="color: #006946;">$ckstop</code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">volume</code></td>
+						<td><code style="color: #006946;">[$ckvl]< amount > [$ckrise-to]< amount ></amount></code></td>
+						<td><code style="color: #006946;">Used for increasing and decreasing the volume.</code></td>
+						<td><code style="color: #006946;">$ckvolume< amount ></amount></code></td>
+					</tr>
+					<tr>
+						<td><code style="color: #006946;">w-filters</code></td>
+						<td><code style="color: #006946;">[$ckfilters]</code></td>
+						<td><code style="color: #006946;">List of all filters enabled or disabled.</code></td>
+						<td><code style="color: #006946;">$ckw-filters</code></td>
+					</tr>
+				  </table>
+			</div>
+		</div>
+		
+		<div id="taskbar">
+			<a rel="nofollow" target="_blank" id="start-icon" style="color: gray;">
+				<img src="/assets/icon.png" alt="" style="border-radius: 100px;">
+			</a>
+			<div class="line"></div>
+		</div>
+		
+		<div id="icons">
+			<a class="openWindow" data-id="3">
+				<img src="/assets/icon.png" alt="" style="border-radius: 100px;">
+				CKM
+			</a>
+			<a class="openWindow" data-id="0">
+				<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fpaomedia%2Fsmall-n-flat%2F512%2Fsign-info-icon.png&f=1&nofb=1" alt="">
+				About
+			</a>
+			<a class="openWindow" data-id="0">
+				<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnggrid.com%2Fwp-content%2Fuploads%2F2021%2F05%2FDiscord-Logo-Circle-2048x2048.png&f=1&nofb=1" alt="">
+				Discord
+			</a>
+		</div>
+		<a rel="nofollow" class="openWindow" data-id="0" id="cred" style="color: gray;">Made with ❤️ by yasVan</a>	
+	</div>
+</body>
+
+</html>

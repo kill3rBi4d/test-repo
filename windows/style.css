@@ -1,0 +1,606 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+#desktop {
+  font-family: 'Ubuntu', sans-serif;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #CCC url("https://wallpapercave.com/wp/wp9384511.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.window {
+  position: absolute;
+  border: 1px solid white;
+  background: #EEE;
+  border-radius: 5px;
+  z-index: 1000;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.185);
+          box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.185);
+}
+
+.window.closed {
+  display: none;
+}
+
+.window.minimizedWindow {
+  display: none;
+}
+
+.window.fullSizeWindow {
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  border-radius: 0;
+  bottom: 32px !important;
+}
+
+.fullSizeWindow .ui-resizable-handle {
+  display: none;
+}
+
+.windowHeader {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #fcfcfc), to(#dbdbdb));
+  background-image: linear-gradient(#fcfcfc 50%, #dbdbdb);
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2px;
+  cursor: default;
+  height: 28px;
+  font-weight: 300;
+}
+
+.windowHeader .tab-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100px;
+  height: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.windowHeader .tab-icons span {
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.windowHeader .tab-icons span:hover {
+  background-color: rgba(134, 134, 134, 0.082);
+}
+
+.windowHeader .tab-icons .winminimize {
+  height: 100%;
+}
+
+.windowHeader .tab-icons .winminimize span {
+  width: 13px;
+  height: 2px;
+  border-radius: 10px;
+  font-weight: 300;
+}
+
+.windowHeader .tab-icons .winmaximize {
+  height: 100%;
+  font-weight: 300;
+}
+
+.windowHeader .tab-icons .winmaximize span {
+  width: 16px;
+  height: 14px;
+  border: 1px #a1a1a1 solid;
+}
+
+.windowHeader .tab-icons .winclose {
+  height: 100%;
+  font-size: 14px;
+}
+
+.windowHeader .tab-icons .winclose:hover {
+  background: #f15454;
+  color: #ffff;
+}
+
+.activeWindow .windowHeader {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #c9c9c9), to(#a0a0a0));
+  background-image: linear-gradient(#c9c9c9 50%, #a0a0a0);
+  color: #4e4e4e;
+  font-weight: 300;
+}
+
+.windowHeader > span {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid #000;
+  margin-left: 4px;
+  font-size: 19px;
+  padding: 2px 10px;
+  font-family: inherit;
+  border-radius: 5px;
+  line-height: 20px;
+  width: 12px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.windowHeader > span:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.windowHeader > span.winclose:hover {
+  background: #f15454;
+}
+
+.windowHeader > span > span {
+  display: inline-block;
+  height: 5px;
+  width: 10px;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+}
+
+.wincontent {
+  padding: 10px;
+  min-width: 200px;
+  min-height: 140px;
+  margin: 2px;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+}
+
+.wincontent .ckm-cont {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.wincontent .ckm-cont h1 {
+  color: #009b67;
+  line-height: normal;
+}
+
+.wincontent .ckm-cont p {
+  color: #40405c;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.wincontent .ckm-cont button {
+  border: none;
+  padding: 10px;
+  background-color: #009b67;
+  font-weight: 500;
+  color: #EEE;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.wincontent .ckm-cont button:hover {
+  background-color: #008558;
+}
+
+.wincontent .ckm-cont table {
+  font-family: inherit;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.wincontent .ckm-cont th {
+  background-color: #008558;
+  color: #dddddd !important;
+}
+
+.wincontent .ckm-cont td, .wincontent .ckm-cont th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-weight: 400;
+}
+
+.windowHeader > strong {
+  float: left;
+  margin: 0px 3px 0 10px;
+  line-height: 29px;
+  font-size: 17px;
+}
+
+.taskbarPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  line-height: 24px;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px 0 0 10px;
+  font-size: 17px;
+  padding: 0 10px;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px rgba(90, 90, 90, 0.322);
+          box-shadow: 0px 0px 5px rgba(90, 90, 90, 0.322);
+  font-weight: 300;
+}
+
+.taskbarPanel.activeTab {
+  background: #5234f3;
+  border: none;
+  font-weight: 300;
+  border-radius: 3px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ffff;
+  font-family: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.taskbarPanel.minimizedTab {
+  background: #ffff;
+}
+
+.taskbarPanel.minimizedTab:hover {
+  background: #DDD;
+}
+
+.taskbarPanel.closed {
+  display: none;
+}
+
+#taskbar {
+  position: absolute;
+  height: 32px;
+  z-index: 9999;
+  border-top: 2px solid rgba(0, 0, 0, 0.24);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 5px;
+  padding-top: 2px;
+  background: #EEE;
+}
+
+#taskbar a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  border-radius: 100px;
+  height: 30px;
+  background-color: #30478c;
+  margin-left: 8px;
+  overflow: hidden;
+}
+
+#taskbar a img {
+  width: 100%;
+}
+
+#taskbar .line {
+  width: 2px;
+  border-left: 2px rgba(0, 0, 0, 0.589) dotted;
+  height: 30px;
+  margin-left: 6px;
+}
+
+#icons {
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+
+#icons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 3px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  padding: 13px;
+  width: 50px;
+  height: 50px;
+  color: #EEE;
+  font-weight: 300;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#icons a img {
+  width: 100%;
+  max-width: 90%;
+}
+
+#icons a:hover {
+  background: rgba(255, 255, 255, 0.315);
+  border-radius: 4px;
+}
+
+#cred {
+  position: absolute;
+  display: inline-block;
+  bottom: 10px;
+  right: 20px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #30478c;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+#cred:hover {
+  color: #40405c !important;
+}
+
+#start-menu {
+  position: absolute;
+  display: inline-block;
+  bottom: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #30478c;
+}
+
+/*Demo styles BEGIN*/
+#window0 {
+  top: 20px;
+  left: 240px;
+}
+
+#window1 {
+  top: 400px;
+  left: 120px;
+}
+
+#window2 {
+  top: 250px;
+  left: 300px;
+}
+
+#window3 {
+  top: 125px;
+  left: 420px;
+}
+
+#window0 .wincontent {
+  width: 660px;
+  height: 400px;
+}
+
+#window1 .wincontent {
+  width: 500px;
+  height: 300px;
+}
+
+#window2 .wincontent {
+  width: 400px;
+  height: 350px;
+}
+
+#window3 .wincontent {
+  width: 400px;
+  height: 350px;
+}
+
+@media screen and (max-width: 960px) {
+  #window0 {
+    left: 10px;
+  }
+  #window3 {
+    left: 50px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #window0 .wincontent {
+    width: 460px;
+  }
+  #window2 {
+    left: 100px;
+  }
+  #window1 {
+    top: 190px;
+    left: -5px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #window0 .wincontent {
+    width: 230px;
+    height: 200px;
+  }
+  #window3 .wincontent {
+    width: 275px;
+    height: auto;
+  }
+  #window3 {
+    top: 9px;
+    left: 10px;
+  }
+  #window2 {
+    left: -118px;
+  }
+  #window1 .wincontent {
+    width: auto;
+    height: 300px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
